@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Monitoramento de Desastres Naturais</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <marquee behavior="" direction="right">
+            <h1>Portal de Monitoramento de Desastres Naturais</h1>
+        </marquee>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#secao-sobre">Sobre Nós</a></li>
+            <li><a href="#secao-alertas">Alertas Meteorológicos</a></li>
+            <li><a href="#secao-graficos">Gráficos de Monitoramento</a></li>
+            <li><a href="#secao-mapa">Mapa de Risco</a></li>
+            <li><a href="#secao-prevencao">Prevenção e Cuidados</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="sidebar">
+            <div class="descricao-secao">
+                <h2>Sobre Nós</h2>
+                <p>O Portal de Monitoramento de Desastres Naturais no Brasil tem como objetivo fornecer informações
+                    atualizadas e precisas sobre as condições climáticas e eventos extremos que ocorrem em todo o país.
+                    As informações são obtidas a partir de fontes confiáveis, incluindo o <a
+                        href="https://www.cemaden.gov.br" target="_blank" style="color: #4CAF50;">CEMADEN</a>, para
+                    garantir que os dados apresentados sejam os mais precisos e úteis para a população.</p>
+                <img src="https://img.freepik.com/vetores-premium/conjunto-de-desastres-naturais_24640-78925.jpg"
+                    alt="Sobre Nós"
+                    style="width: 100%; max-width: 500px; height: auto; border-radius: 10px; margin-top: 20px;" />
+            </div>
+        </div>
+        <div class="content">
+            <section id="secao-alertas">
+                <h2>Alertas Meteorológicos</h2>
+                <div id="alertas">
+
+                </div>
+            </section>
+            <div class="separador"></div>
+            <section id="secao-graficos">
+                <h2>Gráficos de Monitoramento</h2>
+                <div class="grafico-container">
+                    <canvas id="grafico1"></canvas>
+                    <p>Monitoramento das ocorrências de desastres ao longo do ano. O gráfico mostra um aumento
+                        significativo nos meses de maio e outubro, indicando períodos de maior risco. É essencial estar
+                        atento às condições climáticas durante esses meses.</p>
+                </div>
+                <div class="grafico-container">
+                    <canvas id="grafico2"></canvas>
+                    <p>Nível de risco de desastres nas diferentes regiões do Brasil. O Sudeste apresenta mais de 70% de
+                        risco, seguido pelo Centro-Oeste com 80%. Esses dados destacam a necessidade de medidas
+                        preventivas nessas áreas.</p>
+                </div>
+            </section>
+            <div class="separador"></div>
+            <section id="secao-mapa">
+                <h2>Mapa de Risco</h2>
+                <div id="mapa"></div>
+            </section>
+            <div class="separador"></div>
+            <section id="secao-prevencao">
+                <div class="prevenção-container">
+                    <h2>Prevenção e Cuidados</h2>
+                    <p>Saiba como se preparar e agir durante desastres naturais para proteger você e sua família.</p>
+                    <img src="https://static.vecteezy.com/ti/vetor-gratis/p3/25904539-pai-segurando-a-guarda-chuva-abrigo-dele-familia-a-partir-de-chuva-enquanto-sacrificando-ele-mesmo-molhado-lado-de-fora-a-guarda-chuva-ilustracao-retrata-conceito-do-amor-sacrificio-devocao-guardiao-e-cuidado-vetor.jpg"
+                        alt="Prevenção e Cuidados" />
+                    <p><strong>Dicas de Prevenção:</strong></p>
+                    <ul>
+                        <li>Conheça o plano de evacuação da sua cidade e tenha um kit de emergência pronto.</li>
+                        <li>Mantenha-se informado sobre as condições climáticas e possíveis alertas emitidos pelos
+                            órgãos oficiais.</li>
+                        <li>Prepare sua casa para resistir a desastres naturais, como tempestades e inundações,
+                            verificando e reforçando a estrutura.</li>
+                        <li>Crie um plano de comunicação com sua família para casos de emergência e assegure-se de que
+                            todos saibam como agir.</li>
+                        <li>Em caso de desastres, siga as orientações das autoridades e evite áreas de risco.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="secao-cadastro" class="secao-cadastro">
+                <div class="formulario-container">
+                    <h2>Cadastro</h2>
+                    <form id="cadastro-form">
+                        <input id="name" type="text" name="nome" placeholder="Nome" required>
+                        <input id="lastName" type="text" name="sobrenome" placeholder="Sobrenome" required>
+                        <input id="email" type="email" name="email" placeholder="Email" required>
+                        <button type="submit">Cadastrar</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <div class="sidebar-right">
+            <div class="descricao-secao">
+                <h2>Outras Informações</h2>
+                <p>Esta seção pode conter links úteis, informações adicionais sobre como ajudar ou como se voluntariar
+                    em situações de desastre. Para mais detalhes, visite o <a href="https://www.ibdc.org.br"
+                        target="_blank">Instituto Brasileiro de Defesa Civil</a>.</p>
+                <img src="https://www.gov.br/mdr/pt-br/noticias/agente-de-protecao-e-defesa-civil-entra-para-a-classificacao-brasileira-de-ocupacoes-cbo-1/defesa_civil_chuvas_de_verao.jpg/@@images/c022c44d-478e-4c24-9749-6a86bb02d22b.jpeg"
+                    alt="Outras Informações"
+                    style="width: 100%; max-width: 500px; height: auto; border-radius: 10px; margin-top: 20px;" />
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Portal de Monitoramento de Desastres Naturais. Desenvolvido por Pedro Henrique Marques</p>
+    </footer>
+    <div id="popup" class="popup">
+        <h3>Cadastro realizado com sucesso!</h3>
+        <button onclick="fecharPopup()">Fechar</button>
+    </div>
+    <script src="/script.js"></script>
+</body>
+
+</html>
